@@ -1,0 +1,39 @@
+
+1) un X qui se deplace automatiquement
+2) reapparition
+3) changer sa direction zqsd
+4) bordure d'ecran
+5) pomme aleatoire - pas sur le serpent
+6) serpent qui grandi
+7) pomme pourrie aleatoire - fleme
+
+
+
+
+      0    1    ...  taille
+    +---+----+-------
+  0 | 5 |  4 |
+    +---+----+-------
+  1 | 8 |  8 |
+    +---+----+-------
+...
+
+tab[2][taillemax]
+
+taille
+
+
+taille * taille
+
+tab[taille][2]
+
+tab[3][0]
+
+
+
+void srand(time());
+
+
+int rand(void); => 0 - XXX
+
+rand() % 42 => 0-41
