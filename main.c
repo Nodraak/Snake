@@ -111,7 +111,8 @@ void ft_play(int level)
 			ft_update_apple(&snake, &apple, mapBlocks);
 		}
 		
-		portability_background_color_set(ft_gen_color());
+		/* mode epileptique */
+		/*portability_background_color_set(ft_gen_color());*/
 
 		/* display */
 		ft_update_screen(screen, mapBlocks, &snake, &apple);
