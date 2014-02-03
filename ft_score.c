@@ -15,6 +15,7 @@
 
 #include "ft_score.h"
 
+/* load high score form file */
 int ft_get_high_score(void)
 {
 	FILE *f = NULL;
@@ -34,7 +35,7 @@ int ft_get_high_score(void)
 	return n;
 }
 
-
+/* save high score to file */
 void ft_update_high_score(int n)
 {
 	FILE *f = NULL;
@@ -50,4 +51,3 @@ void ft_update_high_score(int n)
 
 	fclose(f);
 }
-

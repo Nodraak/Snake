@@ -21,6 +21,7 @@
 #define SIZE_DOOR_1		5
 #define SIZE_DOOR_2		10
 
+/* enum for play/pause/quit + snake direction */
 enum
 {
 	STATE_PLAYING,
@@ -36,6 +37,7 @@ enum
 	DIR_LEFT
 };
 
+/* struct for easier snake computing */
 typedef struct  s_vector
 {
 	int         x;

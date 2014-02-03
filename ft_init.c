@@ -15,11 +15,13 @@
 #include "constantes.h"
 #include "ft_init.h"
 
+/* dummy function because i love coding from scratch */
 int ft_abs(int nb)
 {
 	return nb < 0 ? -nb : nb;
 }
 
+/* set up snake */
 void ft_init_snake(t_snake *snake)
 {
 	snake->body[0].x = MAP_WIDTH/2;
@@ -34,6 +36,7 @@ void ft_init_snake(t_snake *snake)
 	snake->dir = DIR_DOWN;
 }
 
+/* set up map with level choosen */
 void ft_load_blocks(int level, char mapBlocks[MAP_HEIGHT][MAP_WIDTH])
 {
 	int i, j;

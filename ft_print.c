@@ -12,11 +12,12 @@
 
 #include <stdio.h>
 
-#include "portability.h"
+#include "portability.h" /* always last include */
 
 #include "constantes.h"
 #include "ft_print.h"
 
+/* header */
 void ft_print_title(void)
 {
 	printf( "+----------------------------------------------------------+\n"
@@ -26,6 +27,7 @@ void ft_print_title(void)
 			"+-----------------------------+----------------------------+\n");
 }
 
+/* welcoming screen */
 void ft_print_home(void)
 {
 	/*
@@ -50,6 +52,7 @@ void ft_print_home(void)
 			"+----------------------------------------------------------+\n");
 }
 
+/* score */
 void ft_print_score(int len, int highScore)
 {
 	printf( "|                             |                            |\n"
@@ -60,6 +63,7 @@ void ft_print_score(int len, int highScore)
 			highScore, highScore < 2 ? ' ' : 's');
 }
 
+/* calc screen and save to proper table */
 void ft_update_screen(char screen[MAP_HEIGHT][MAP_WIDTH], char mapBlocks[MAP_HEIGHT][MAP_WIDTH], t_snake *snake, t_vector *apple)
 {
 	int i, j;
@@ -104,11 +108,12 @@ void ft_update_screen(char screen[MAP_HEIGHT][MAP_WIDTH], char mapBlocks[MAP_HEI
 	}
 }
 
+/* show screen */
 void ft_print_screen(char map[MAP_HEIGHT][MAP_WIDTH])
 {
 	int i, j;
 
-	for (j = 1; j < MAP_HEIGHT; ++j) /* skip first line - already blitted */
+	for (j = 1; j < MAP_HEIGHT; ++j) /* skip first line - already shown */
 	{
 		for (i = 0; i < MAP_WIDTH; ++i)
 		{

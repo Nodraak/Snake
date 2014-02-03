@@ -15,6 +15,7 @@
 #include "constantes.h"
 #include "ft_event.h"
 
+/* handle event : play/pause/quit + change direction */
 void ft_update_event(int *quit, int *dir)
 {
 	if (kbhit())
@@ -46,6 +47,7 @@ void ft_update_event(int *quit, int *dir)
 	}
 }
 
+/* update snake stuff : snake moving + handle death + respawn whe reach edge of map */
 void ft_update_snake(t_snake *snake, char mapBlocks[MAP_HEIGHT][MAP_WIDTH])
 {
 	int i;
@@ -89,6 +91,7 @@ void ft_update_snake(t_snake *snake, char mapBlocks[MAP_HEIGHT][MAP_WIDTH])
 		snake->body[0].y = 1;
 }
 
+/* call the proper function ton gen new apple if the actual is eaten */
 void ft_update_apple(t_snake *snake, t_vector *apple, char mapBlocks[MAP_HEIGHT][MAP_WIDTH])
 {
 	if (snake->body[0].x == apple->x && snake->body[0].y == apple->y)
@@ -98,17 +101,18 @@ void ft_update_apple(t_snake *snake, t_vector *apple, char mapBlocks[MAP_HEIGHT]
 	}
 }
 
+/* gen new apple */
 void ft_new_apple(t_snake *snake, t_vector *apple, char mapBlocks[MAP_HEIGHT][MAP_WIDTH])
 {
 	int okApple = 0;
 	int i;
 
-	/* while apple gen is on snake */
+	/* while new apple is on the snake */
 	while (!okApple)
 	{
 		okApple = 1;
 
-		/* rand pos */
+		/* random pos */
 		apple->x = (rand() % (MAP_WIDTH-2)) + 1;
 		apple->y = (rand() % (MAP_HEIGHT-2)) + 1;
 

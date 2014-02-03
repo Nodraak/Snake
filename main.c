@@ -22,13 +22,12 @@
 #include "ft_print.h"
 #include "ft_score.h"
 
+/* some prototypes */
 int ft_menu(void);
 void ft_play(int level);
 void ft_sleep(int n, int dir);
 
-/* main :
- * 	Guess what this function does.
- */
+/* guess what this function does */
 int main(void)
 {
 	int choice;
@@ -54,6 +53,7 @@ int ft_gen_color(void)
 
 ///////////////////////////////////////////////////////////////////////////////////
 
+/* get user's choice */
 int ft_menu(void)
 {
 	char c;
@@ -82,6 +82,7 @@ int ft_menu(void)
 	return ret;
 }
 
+/* main loop */
 void ft_play(int level)
 {
 	/* var */
@@ -111,10 +112,9 @@ void ft_play(int level)
 			ft_update_apple(&snake, &apple, mapBlocks);
 		}
 		
-		portability_background_color_set(ft_gen_color());
-
 		/* display */
 		ft_update_screen(screen, mapBlocks, &snake, &apple);
+		//portability_background_color_set(ft_gen_color()); /* !!! epileptique */
 		portability_gotoligcol(0, 0);
 		ft_print_title();
 		ft_print_score(snake.len, highScore);
